@@ -172,6 +172,7 @@ public:
 	{
 		this->address = address;
 		this->i2cMasterBus = i2cMasterBus;
+		this->begin();
 	}
 	bool begin(bool set_24Hour = true, bool disable_TrickleCharge = true, bool set_LevelSwitchingMode = true, bool reset_Status = true);
 	bool setTime(uint8_t sec, uint8_t min, uint8_t hour, uint8_t weekday, uint8_t date, uint8_t month, uint16_t year);
