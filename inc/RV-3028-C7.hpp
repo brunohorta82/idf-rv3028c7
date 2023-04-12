@@ -172,10 +172,9 @@ public:
 	{
 		this->address = address;
 		this->i2cMasterBus = i2cMasterBus;
-		this->begin();
 	}
-
-		bool setTime(uint8_t sec, uint8_t min, uint8_t hour, uint8_t weekday, uint8_t date, uint8_t month, uint16_t year);
+	bool begin(bool set_24Hour = true, bool disable_TrickleCharge = true, bool set_LevelSwitchingMode = true, bool reset_Status = true);
+	bool setTime(uint8_t sec, uint8_t min, uint8_t hour, uint8_t weekday, uint8_t date, uint8_t month, uint16_t year);
 	bool setTime(uint8_t *time, uint8_t len);
 	bool setSeconds(uint8_t value);
 	bool setMinutes(uint8_t value);
@@ -273,5 +272,4 @@ private:
 	uint8_t address;
 	uint8_t _time[TIME_ARRAY_LENGTH];
 	shared_ptr<I2CMaster> i2cMasterBus;
-	bool begin(bool set_24Hour = true, bool disable_TrickleCharge = true, bool set_LevelSwitchingMode = true, bool reset_Status = true);
 };

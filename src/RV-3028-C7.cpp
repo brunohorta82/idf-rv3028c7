@@ -770,7 +770,7 @@ bool RV3028::writeRegister(uint8_t addr, uint8_t val)
 	try
 	{
 		vector<uint8_t> data;
-		data.push_back(address);
+		data.push_back(addr);
 		data.push_back(val);
 		getBus()->syncWrite(I2CAddress(getAddress()), data);
 		return (true);
@@ -803,7 +803,7 @@ bool RV3028::writeMultipleRegisters(uint8_t addr, uint8_t *values, uint8_t len)
 	try
 	{
 		vector<uint8_t> data;
-		data.push_back(address);
+		data.push_back(addr);
 		for (uint8_t i = 0; i < len; i++)
 		{
 			data.push_back(values[i]);
