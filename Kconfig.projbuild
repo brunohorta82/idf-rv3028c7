@@ -1,0 +1,15 @@
+menu "RV3028C7" 
+    config RV3028C7_ACTIVE
+    bool "Active"
+    default y
+    config RV3028C7_ADDRESS
+        hex
+        prompt  "RV3028C7 Address"
+        default 0x52
+        depends on RV3028C7_ACTIVE
+
+    config RV3028C7_INTERRUPT_PIN
+        int "INTERRUPT Pin"
+        default -1 
+        depends on RV3028C7_ACTIVE    
+endmenu
