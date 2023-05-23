@@ -760,7 +760,7 @@ uint8_t RV3028::readRegister(uint8_t addr)
 	}
 	catch (const I2CException &e)
 	{
-		ESP_LOGE("MAX17048", "I2C Exception with error: %s (0x%X)", e.what(), e.error);
+		ESP_LOGE("RV3028", "I2C Exception with error: %s (0x%X)", e.what(), e.error);
 		return (0xFF);
 	}
 }
@@ -777,7 +777,7 @@ bool RV3028::writeRegister(uint8_t addr, uint8_t val)
 	}
 	catch (const I2CException &e)
 	{
-		ESP_LOGI("MAX17048", "I2C Exception with error: %s (0x%X)", e.what(), e.error);
+		ESP_LOGI("RV3028", "I2C Exception with error: %s (0x%X)", e.what(), e.error);
 		return false;
 	}
 }
@@ -793,7 +793,7 @@ bool RV3028::readMultipleRegisters(uint8_t addr, uint8_t *dest, uint8_t len)
 	}
 	catch (const I2CException &e)
 	{
-		ESP_LOGE("MAX17048", "I2C Exception with error: %s (0x%X)", e.what(), e.error);
+		ESP_LOGE("RV3028", "I2C Exception with error: %s (0x%X)", e.what(), e.error);
 		return (false);
 	}
 }
@@ -813,7 +813,7 @@ bool RV3028::writeMultipleRegisters(uint8_t addr, uint8_t *values, uint8_t len)
 	}
 	catch (const I2CException &e)
 	{
-		ESP_LOGI("MAX17048", "I2C Exception with error: %s (0x%X)", e.what(), e.error);
+		ESP_LOGI("RV3028", "I2C Exception with error: %s (0x%X)", e.what(), e.error);
 		return false;
 	}
 }
