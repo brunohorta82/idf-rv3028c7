@@ -3,8 +3,10 @@
 #include "RV-3028-C7.hpp"
 #include <esp_log.h>
 #include <cstring>
+#ifndef delay
 #define delay(ms) esp_rom_delay_us(ms * 1000)
-unsigned long millis();
+#endif
+
 //****************************************************************************//
 //
 //  Settings and configuration
